@@ -1,7 +1,10 @@
 import kaboom from "kaboom";
 
 // start the game
-kaboom();
+kaboom({
+  width: 1000,
+  height: 500,
+});
 
 // define gravity
 setGravity(2400);
@@ -38,7 +41,7 @@ add([
 loop(3, () => {
   const projectile = add([
     sprite("vase"),
-    pos(width(), height() - 100),
+    pos(width(), height() - 150),
     area(),
     move(900, 200),
     offscreen({ destroy: true }),
