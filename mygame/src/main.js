@@ -1,7 +1,10 @@
 import kaboom from "kaboom";
 
 // start the game
-kaboom();
+kaboom({
+  width: 1000,
+  height: 500,
+});
 
 // define gravity
 setGravity(2400);
