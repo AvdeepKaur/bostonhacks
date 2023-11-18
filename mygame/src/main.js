@@ -31,7 +31,10 @@ add([
   area(),
   body({ isStatic: true }),
   color(127, 200, 255),
+  projectile,
 ]);
+
+
 const projectile = add([
     sprite("bean"),
     pos(1900,850),
@@ -50,15 +53,12 @@ const projectile = add([
 // jump when player presses "space" key
 onKeyPress("space", () => {
   player.jump();
-  follower.jump();
 });
 
 onKeyPress("d", () => {
   player.moveBy(10);
-  follower.moveBy(10);
 });
 
 onKeyPress("a", () => {
   player.moveBy(-10);
-  follower.moveBy(-10);
 });
