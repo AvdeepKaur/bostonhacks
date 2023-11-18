@@ -38,7 +38,7 @@ add([
 loop(3, () => {
   const projectile = add([
     sprite("vase"),
-    pos(width(), height() - 100),
+    pos(width(), height() - 150),
     area(),
     move(900, 200),
     offscreen({ destroy: true }),
