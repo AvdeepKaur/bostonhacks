@@ -52,6 +52,7 @@ var vases = 0;
 var game1 = 0;
 
 loop(2, () => {
+  //checks if hearts are 0 and if there were less than 10 vases
   if (i != 0 && vases < 10) {
     const projectile = add([
       sprite("vase"),
