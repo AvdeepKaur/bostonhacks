@@ -23,6 +23,10 @@ onKeyPress("space", () => {
     player.jump()
 })
 
+onKeyPress("r",() => {
+    restart()
+})
+
 add([
 	rect(width(), 48),
 	outline(4),
@@ -31,4 +35,13 @@ add([
 	area(),
 	body({ isStatic: true }),
 	color(127, 200, 255),
+	projectile,
 ]);
+
+const projectile = add([
+    sprite("bean"),
+    pos(1500,850),
+    area(),
+    move(900,200),
+    offscreen({ destroy: true }),
+])
