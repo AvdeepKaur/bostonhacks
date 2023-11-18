@@ -8,6 +8,7 @@ setGravity(2400);
 
 // load a default sprite
 loadBean();
+loadSprite("vase", "vase1.png");
 
 // add character to screen, from a list of components
 const player = add([
@@ -36,7 +37,7 @@ add([
 
 loop(3, () => {
   const projectile = add([
-    sprite("bean"),
+    sprite("vase"),
     pos(width(), height() - 100),
     area(),
     move(900, 200),
