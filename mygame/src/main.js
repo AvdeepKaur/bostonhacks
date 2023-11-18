@@ -9,8 +9,9 @@ kaboom({
 // define gravity
 setGravity(2400);
 
-// load a default sprite
+// load the sprites
 loadBean(); 
+loadSprite("heart", "/sprites/heart.png");
 loadSprite("vase", "/sprites/vase1.png");
 loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 loadSprite("bCat", "/sprites/bluedrum_84x110.png");
@@ -41,36 +42,51 @@ add([
   color(127, 200, 255),
 ]);
 
+//hearts
+const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
+const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
+const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
+//variables to help run the game
+var i = 3;
+var vases = 0;
+var game1 = 0;
+
 loop(2, () => {
-  const projectile = add([
-    sprite("vase"),
-    pos(width(), height() - 150),
-    area(),
-    move(900, 1000),
-    offscreen({ destroy: true }),
-    "projectile",
-  ]);
-  projectile.onCollide("player", () => {
-    destroy(projectile);
-  });
+  if (i != 0 && vases < 10) {
+    const projectile = add([
+      sprite("vase"),
+      pos(width(), height() - 150),
+      area(),
+      move(900, 1000),
+      offscreen({ destroy: true }),
+      "projectile",
+    ]);
+    vases += 1;
+    console.log(vases);
+    projectile.onCollide("player", () => {
+      destroy(projectile);
+      if (i == 3) {
+        destroy(heart1);
+        i -= 1;
+      } else if (i == 2) {
+        destroy(heart2);
+        i -= 1;
+      } else if (i == 1) {
+        destroy(heart3);
+        i -= 1;
+      }
+    });
+  } else {
+    loop = false;
+    //if the player lost the game then have an indicator that it was lost
+    if (i == 0) {
+      game1 = 1;
+    }
+  }
 });
 
-const score = add([text("Score: 10"), pos(24, 24), { value: 10 }]);
-
-player.onCollide("projectile", () => {
-  score.value -= 1;
-  score.text = "Score:" + score.value;
-});
 
 // with options
-add([
-  pos(24, 24),
-  text(" ", {
-    size: 48,
-    width: 320,
-    font: "sans-serif",
-  }),
-]);
 // const follower = add([
 //   sprite("bean"),
 //   pos(110, 80), // position in world
