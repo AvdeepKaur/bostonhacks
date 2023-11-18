@@ -40,25 +40,10 @@ const projectile = add([
     offscreen({ destroy: true }),
 ])
 
-// const follower = add([
-//   sprite("bean"),
-//   pos(110, 80), // position in world
-//   area(), // has a collider
-//   body(),
-// ]);
-
-// jump when player presses "space" key
-onKeyPress("space", () => {
-  player.jump();
-  follower.jump();
-});
-
 onKeyPress("d", () => {
   player.moveBy(10);
-  follower.moveBy(10);
 });
 
 onKeyPress("a", () => {
   player.moveBy(-10);
-  follower.moveBy(-10);
 });
