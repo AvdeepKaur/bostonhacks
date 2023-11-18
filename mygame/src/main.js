@@ -9,10 +9,11 @@ setGravity(2400);
 // load a default sprite
 loadBean();
 loadSprite("vase", "/sprites/vase1.png");
+loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 
 // add character to screen, from a list of components
 const player = add([
-  sprite("bean", "player"), // renders as a sprite
+  sprite("pCat", "player"), // renders as a sprite
   pos(120, 80), // position in world
   area(), // has a collider
   body(), // responds to physics and gravity
