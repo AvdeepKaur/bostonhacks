@@ -10,7 +10,7 @@ kaboom({
 setGravity(2400);
 
 // load a default sprite
-loadBean();
+loadBean(); 
 loadSprite("vase", "/sprites/vase1.png");
 loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 loadSprite("bCat", "/sprites/bluedrum_84x110.png");
