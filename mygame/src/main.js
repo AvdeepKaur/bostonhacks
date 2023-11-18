@@ -12,6 +12,7 @@ setGravity(2400);
 // load a default sprite
 loadBean();
 loadSprite("vase", "/sprites/vase1.png");
+loadSprite("heart", "/sprites/heart.png");
 
 // add character to screen, from a list of components
 const player = add([
