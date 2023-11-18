@@ -31,18 +31,18 @@ add([
   area(),
   body({ isStatic: true }),
   color(127, 200, 255),
-  projectile,
+  //projectile,
 ]);
 
-
-const projectile = add([
-  sprite("bean"),
-  pos(1500, 850),
-  area(),
-  move(900, 200),
-  offscreen({ destroy: true }),
-]);
-
+loop(3, () => {
+  const projectile = add([
+    sprite("bean"),
+    pos(width(), height() - 100),
+    area(),
+    move(900, 200),
+    offscreen({ destroy: true }),
+  ]);
+});
 // const follower = add([
 //   sprite("bean"),
 //   pos(110, 80), // position in world
