@@ -12,6 +12,9 @@ setGravity(2400);
 // load a default sprite
 loadBean();
 loadSprite("vase", "/sprites/vase1.png");
+loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
+loadSprite("bCat", "/sprites/bluedrum_84x110.png");
+loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
 
 // add character to screen, from a list of components
 const player = add([
@@ -38,7 +41,7 @@ add([
   color(127, 200, 255),
 ]);
 
-loop(1, () => {
+loop(2, () => {
   const projectile = add([
     sprite("vase"),
     pos(width(), height() - 150),
