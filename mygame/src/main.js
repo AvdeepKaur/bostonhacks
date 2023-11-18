@@ -40,7 +40,7 @@ add([
 
 const projectile = add([
     sprite("bean"),
-    pos(1500,850),
+    pos(1900,850),
     area(),
     move(900,200),
     offscreen({ destroy: true }),
