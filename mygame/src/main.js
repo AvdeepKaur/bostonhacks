@@ -40,14 +40,6 @@ const projectile = add([
     offscreen({ destroy: true }),
 ])
 
-/ add character to screen, from a list of components
-const player = add([
-  sprite("bean"), // renders as a sprite
-  pos(120, 80), // position in world
-  area(), // has a collider
-  body(), // responds to physics and gravity
-]);
-
 // const follower = add([
 //   sprite("bean"),
 //   pos(110, 80), // position in world
