@@ -36,12 +36,12 @@ add([
 
 
 const projectile = add([
-    sprite("bean"),
-    pos(1900,850),
-    area(),
-    move(900,200),
-    offscreen({ destroy: true }),
-])
+  sprite("bean"),
+  pos(1500, 850),
+  area(),
+  move(900, 200),
+  offscreen({ destroy: true }),
+]);
 
 // const follower = add([
 //   sprite("bean"),
