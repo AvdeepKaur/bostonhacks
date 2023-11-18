@@ -12,11 +12,10 @@ setGravity(2400);
 // load a default sprite
 loadBean();
 loadSprite("vase", "/sprites/vase1.png");
-loadSprite("heart", "/sprites/heart.png");
 
 // add character to screen, from a list of components
 const player = add([
-  sprite("bean", "player"), // renders as a sprite
+  sprite("bCat", "player"), // renders as a sprite
   pos(120, 80), // position in world
   area(), // has a collider
   body(), // responds to physics and gravity
@@ -39,12 +38,12 @@ add([
   color(127, 200, 255),
 ]);
 
-loop(3, () => {
+loop(1, () => {
   const projectile = add([
     sprite("vase"),
     pos(width(), height() - 150),
     area(),
-    move(900, 200),
+    move(900, 1000),
     offscreen({ destroy: true }),
     "projectile",
   ]);
