@@ -10,7 +10,7 @@ kaboom({
 setGravity(2400);
 
 // load a default sprite
-loadBean();
+loadBean(); 
 loadSprite("vase", "/sprites/vase1.png");
 
 // add character to screen, from a list of components
