@@ -10,17 +10,18 @@ kaboom({
 setGravity(2400);
 
 // load the sprites
-loadBean(); 
+loadBean();
 loadSprite("heart", "/sprites/heart.png");
 loadSprite("vase", "/sprites/vase1.png");
 loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 loadSprite("bCat", "/sprites/bluedrum_84x110.png");
 loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
+loadSprite("ni-bCat", "/sprites/ni-blue_83x110.png");
 
 // add character to screen, from a list of components
 const player = add([
-  sprite("bCat", "player"), // renders as a sprite
-  pos(80, 80), // position in world
+  sprite("ni-bCat", "player"), // renders as a sprite
+  pos(120, 80), // position in world
   area(), // has a collider
   body(), // responds to physics and gravity
   "player",
@@ -89,21 +90,3 @@ wait(2, () => {
     }
   });
 });
-
-
-
-// with options
-// const follower = add([
-//   sprite("bean"),
-//   pos(110, 80), // position in world
-//   area(), // has a collider
-//   body(),
-// ]);
-
-// onKeyPress("d", () => {
-//   player.moveBy(10);
-// });
-
-// onKeyPress("a", () => {
-//   player.moveBy(-10);
-// });
