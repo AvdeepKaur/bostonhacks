@@ -3,40 +3,35 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-  }
-  
-  /* Style for the header element */
-  header {
+    padding: 40px; /* Add padding for the entire body */
+    box-sizing: border-box; /* Include padding in the total width/height calculation */
+}
+
+/* Style for the header element */
+header {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
-  }
-  
-  /* Style for the main content area */
-  main {
+}
+
+/* Style for the main content area */
+main {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto; /* Center align the main content */
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style for a paragraph element */
-  p {
+}
+
+.game {
+    display: block;
+    margin: 0 auto; /* Center align the game */
+    padding: 30px;
+}
+
+/* Style for a paragraph element */
+p {
     line-height: 1.6;
     color: #333;
-  }
-  
-  /* Style for a link */
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  /* Style for a link when hovered */
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}

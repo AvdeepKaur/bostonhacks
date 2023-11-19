@@ -4,11 +4,9 @@ import kaboom from "kaboom";
 kaboom({
   background: [255, 253, 208],
   width: 1000,
-  height: 500,
+  height: 751,
 });
 
-// define gravity
-setGravity(2400);
 // load the sprites
 loadSprite("heart", "/sprites/heart.png");
 loadSprite("vase", "/sprites/vase1.png");
@@ -16,10 +14,31 @@ loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 loadSprite("bCat", "/sprites/bluedrum_84x110.png");
 loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
 loadSprite("ni-bCat", "/sprites/ni-blue_83x110.png");
-loadSprite("background", "/backgroundMG1.png");
+//loadSprite("background", "/backgroundMG1.png");
 loadSprite("drums", "/sprites/drums.png");
 loadSprite("cymbals", "/sprites/cymbols.png");
 loadSprite("guitar", "/sprites/guitar.png");
+loadSprite("stage", "/sprites/backgroundStage.png");
+loadSprite("sunny", "/sprites/sunny.png");
+loadSprite("robin", "/sprites/robin.png");
+loadSprite("tory", "/sprites/tory.png");
+
+//starting scene
+scene("start", () => {
+  add([sprite("stage"), pos(width() / 240, height() / 240)]);
+  add([sprite("pCat"), pos(250, 500)], "pink");
+  add([sprite("bCat"), pos(450, 500)], "blue");
+  add([sprite("yCat"), pos(650, 500)], "yellow");
+});
+
+onClick("pink", () => add([sprite("sunny"), pos(250, 500)], "sunnyAbout"));
+onClick("blue", () => add([sprite("robin"), pos(250, 500)], "robinAbout"));
+onClick("yellow", () => add([sprite("tory"), pos(250, 500)], "toryAbout"));
+
+go("start");
+
+// define gravity
+setGravity(2400);
 
 // add character to screen, from a list of components
 
@@ -60,13 +79,14 @@ const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
 const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
 //variables to help run the game
 var i = 3;
-var vases = 0;
+var projectiles = 0;
 var game1 = 0;
+var array = [];
 
 wait(2, () => {
   loop(2, () => {
     //checks if hearts are 0 and if there were less than 10 vases
-    if (i != 0 && vases < 100) {
+    if (i != 0 && projectiles < 100) {
       const projectile = add([
         sprite("vase"),
         pos(width(), height() - 150),
@@ -75,8 +95,8 @@ wait(2, () => {
         offscreen({ destroy: true }),
         "projectile",
       ]);
-      vases += 1;
-      console.log(vases);
+      projectiles += 1;
+      console.log(projectiles);
       projectile.onCollide("player", () => {
         destroy(projectile);
         if (i == 3) {
