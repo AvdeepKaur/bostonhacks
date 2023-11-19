@@ -164,7 +164,7 @@ scene("game", () => {
         let r = Math.floor(Math.random() * 3);
         const projectile = add([
           sprite(obstacles[r]),
-          pos(width(), height() - 200),
+          pos(width(), height() - 150),
           area(),
           move(900, 1000),
           offscreen({ destroy: true }),
