@@ -9,6 +9,7 @@ A modern, mesmerizing, and meowtastic game. All of our musician cats, Robin, Sun
 Robin will run around, avoiding obstucles, and finding their insturments. Don't worry if you loss a life when you collide into a vase, cat, or bookshelf (cats have 3 lives... wait...). If you miss an insturment, I hope you feel guilty, terrible in fact!!! (Just kidding, enjoy the game, enjoy the process, enjoy the ending)
 
 **Commands:**
+
 Right-Click: Continue with the story
 
 Space: Jump
