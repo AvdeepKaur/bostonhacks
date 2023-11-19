@@ -2,6 +2,7 @@ import kaboom from "kaboom";
 
 // start the game
 kaboom({
+  background: [255, 255, 255],
   width: 1000,
   height: 500,
 });
@@ -42,7 +43,7 @@ add([
   anchor("botleft"),
   area(),
   body({ isStatic: true }),
-  color(127, 200, 255),
+  color(150, 75, 0),
 ]);
 
 //hearts
