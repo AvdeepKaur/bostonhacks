@@ -20,16 +20,18 @@ loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
 // add character to screen, from a list of components
 const player = add([
   sprite("bCat", "player"), // renders as a sprite
-  pos(120, 80), // position in world
+  pos(80, 80), // position in world
   area(), // has a collider
   body(), // responds to physics and gravity
   "player",
 ]);
 
-// jump when player presses "space" key
+// // jump when player presses "space" key
 onKeyPress("space", () => {
   // .jump() is provided by the body() component
-  player.jump();
+  if (player.isGrounded()) {
+    player.jump(1000);
+  }
 });
 
 add([
@@ -51,40 +53,43 @@ var i = 3;
 var vases = 0;
 var game1 = 0;
 
-loop(2, () => {
-  //checks if hearts are 0 and if there were less than 10 vases
-  if (i != 0 && vases < 10) {
-    const projectile = add([
-      sprite("vase"),
-      pos(width(), height() - 150),
-      area(),
-      move(900, 1000),
-      offscreen({ destroy: true }),
-      "projectile",
-    ]);
-    vases += 1;
-    console.log(vases);
-    projectile.onCollide("player", () => {
-      destroy(projectile);
-      if (i == 3) {
-        destroy(heart1);
-        i -= 1;
-      } else if (i == 2) {
-        destroy(heart2);
-        i -= 1;
-      } else if (i == 1) {
-        destroy(heart3);
-        i -= 1;
+wait(2, () => {
+  loop(2, () => {
+    //checks if hearts are 0 and if there were less than 10 vases
+    if (i != 0 && vases < 10) {
+      const projectile = add([
+        sprite("vase"),
+        pos(width(), height() - 150),
+        area(),
+        move(900, 1000),
+        offscreen({ destroy: true }),
+        "projectile",
+      ]);
+      vases += 1;
+      console.log(vases);
+      projectile.onCollide("player", () => {
+        destroy(projectile);
+        if (i == 3) {
+          destroy(heart1);
+          i -= 1;
+        } else if (i == 2) {
+          destroy(heart2);
+          i -= 1;
+        } else if (i == 1) {
+          destroy(heart3);
+          i -= 1;
+        }
+      });
+    } else {
+      loop = false;
+      //if the player lost the game then have an indicator that it was lost
+      if (i == 0) {
+        game1 = 1;
       }
-    });
-  } else {
-    loop = false;
-    //if the player lost the game then have an indicator that it was lost
-    if (i == 0) {
-      game1 = 1;
     }
-  }
+  });
 });
+
 
 
 // with options
@@ -95,15 +100,10 @@ loop(2, () => {
 //   body(),
 // ]);
 
-// jump when player presses "space" key
-onKeyPress("space", () => {
-  player.jump();
-});
+// onKeyPress("d", () => {
+//   player.moveBy(10);
+// });
 
-onKeyPress("d", () => {
-  player.moveBy(10);
-});
-
-onKeyPress("a", () => {
-  player.moveBy(-10);
-});
+// onKeyPress("a", () => {
+//   player.moveBy(-10);
+// });
