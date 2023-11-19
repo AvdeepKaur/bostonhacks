@@ -16,16 +16,17 @@ loadSprite("pCat", "/sprites/pinkcymbals_8_87x110.png");
 loadSprite("bCat", "/sprites/bluedrum_84x110.png");
 loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
 loadSprite("ni-bCat", "/sprites/ni-blue_83x110.png");
-loadSprite("background","/backgroundMG1.png");
+
 // add character to screen, from a list of components
 
+
 const player = add([
-    sprite("ni-bCat", "player"), // renders as a sprite
-    pos(120, 80), // position in world
-    area(), // has a collider
-    body(), // responds to physics and gravity
-    "player",
-  ]);
+  sprite("ni-bCat", "player"), // renders as a sprite
+  pos(120, 80), // position in world
+  area(), // has a collider
+  body(), // responds to physics and gravity
+  "player",
+]);
 
 // // jump when player presses "space" key
 onKeyPress("space", () => {
@@ -50,7 +51,6 @@ add([
   color(150, 75, 0),
 ]);
 
-
 //hearts
 const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
 const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
@@ -63,7 +63,7 @@ var game1 = 0;
 wait(2, () => {
   loop(2, () => {
     //checks if hearts are 0 and if there were less than 10 vases
-    if (i != 0 && vases < 10) {
+    if (i != 0 && vases < 100) {
       const projectile = add([
         sprite("vase"),
         pos(width(), height() - 150),
