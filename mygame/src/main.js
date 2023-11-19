@@ -22,18 +22,21 @@ loadSprite("stage", "/sprites/backgroundStage.png");
 loadSprite("sunny", "/sprites/sunny.png");
 loadSprite("robin", "/sprites/robin.png");
 loadSprite("tory", "/sprites/tory.png");
+loadSprite("bookcase", "/sprites/bookcase3.png");
+loadSprite("cat", "/sprites/cat2.png");
 
 //starting scene
 scene("start", () => {
   add([sprite("stage"), pos(width() / 240, height() / 240)]);
-  add([sprite("pCat"), pos(250, 500)], "pink");
-  add([sprite("bCat"), pos(450, 500)], "blue");
-  add([sprite("yCat"), pos(650, 500)], "yellow");
+  add([sprite("pCat"), area(),pos(250, 500),"pink",]);
+  add([sprite("bCat"), area(),pos(450, 500),"blue",]);
+  add([sprite("yCat"), area(),pos(650, 500),"yellow",]);
+  onClick("pink", () => add([sprite("sunny"),area(),pos(250, 500)], "sunnyAbout"));
+  onClick("blue", () => add([sprite("robin"),area(),pos(250, 500)], "robinAbout"));
+  onClick("yellow", () => add([sprite("tory"),area(),pos(250, 500)], "toryAbout"));
 });
 
-onClick("pink", () => add([sprite("sunny"), pos(250, 500)], "sunnyAbout"));
-onClick("blue", () => add([sprite("robin"), pos(250, 500)], "robinAbout"));
-onClick("yellow", () => add([sprite("tory"), pos(250, 500)], "toryAbout"));
+
 
 go("start");
 
@@ -81,14 +84,15 @@ const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
 var i = 3;
 var projectiles = 0;
 var game1 = 0;
-var array = [];
+var array = ["vase","cat","bookcase"];
 
 wait(2, () => {
   loop(2, () => {
     //checks if hearts are 0 and if there were less than 10 vases
     if (i != 0 && projectiles < 100) {
+      let r=Math.floor(Math.random()*3);
       const projectile = add([
-        sprite("vase"),
+        sprite(array[r]),
         pos(width(), height() - 150),
         area(),
         move(900, 1000),
