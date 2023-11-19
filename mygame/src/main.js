@@ -78,11 +78,6 @@ scene("game", () => {
     body({ isStatic: true }),
     color(150, 75, 0),
   ]);
-
-  //hearts
-  const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
-  const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
-  const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
   //variables to help run the game
   var i = 3;
   var projectiles = 0;
@@ -92,53 +87,53 @@ scene("game", () => {
   var pInstrument = 0;
   var bInstrument = 0;
   var cInstrument = 0;
-//hearts
-const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
-const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
-const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
-//variables to help run the game
-var i = 3;
-var projectiles = 0;
-var game1 = 0;
-var array = ["vase","cat","bookcase"];
+  //hearts
+  const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
+  const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
+  const heart3 = add([pos(24, 24), sprite("heart"), "heart3"]);
+  //variables to help run the game
+  var i = 3;
+  var projectiles = 0;
+  var game1 = 0;
+  var array = ["vase","cat","bookcase"];
 
-wait(2, () => {
-  loop(2, () => {
-    //checks if hearts are 0 and if there were less than 10 vases
-    if (i != 0 && projectiles < 100) {
-      let r=Math.floor(Math.random()*3);
-      const projectile = add([
-        sprite(array[r]),
-        pos(width(), height() - 150),
-        area(),
-        move(900, 1000),
-        offscreen({ destroy: true }),
-        "projectile",
-      ]);
-      projectiles += 1;
-      console.log(projectiles);
-      projectile.onCollide("player", () => {
-        destroy(projectile);
-        if (i == 3) {
-          destroy(heart1);
-          i -= 1;
-        } else if (i == 2) {
-          destroy(heart2);
-          i -= 1;
-        } else if (i == 1) {
-          destroy(heart3);
-          i -= 1;
+  wait(2, () => {
+    loop(2, () => {
+      //checks if hearts are 0 and if there were less than 10 vases
+      if (i != 0 && projectiles < 100) {
+        let r=Math.floor(Math.random()*3);
+        const projectile = add([
+          sprite(array[r]),
+          pos(width(), height() - 150),
+          area(),
+          move(900, 1000),
+          offscreen({ destroy: true }),
+          "projectile",
+        ]);
+        projectiles += 1;
+        console.log(projectiles);
+        projectile.onCollide("player", () => {
+          destroy(projectile);
+          if (i == 3) {
+            destroy(heart1);
+            i -= 1;
+          } else if (i == 2) {
+            destroy(heart2);
+            i -= 1;
+          } else if (i == 1) {
+            destroy(heart3);
+            i -= 1;
+          }
+        });
+      } else {
+        loop = false;
+        //if the player lost the game then have an indicator that it was lost
+        if (i == 0) {
+          game1 = 1;
         }
-      });
-    } else {
-      loop = false;
-      //if the player lost the game then have an indicator that it was lost
-      if (i == 0) {
-        game1 = 1;
-      }
+    };
     });
-  });
-});
+  })});
 
 scene("end", () => {
   add([sprite("stage"), pos(width() / 240, height() / 240)]);
