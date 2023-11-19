@@ -22,13 +22,6 @@ Space: Jump
 
 ## Our Idea and Game Plan
 
-- At first we planned to make a series of 3 minigames: a running/jumping game, a dodging game, and a strategy
-- [x] running
-- [ ] dodging
-- [ ] strategy
-- We wanted to make multiple endings depending on items gained from each minigame
-- As we began to work on our project, we realized that we had to learn more about javascript and html
-- We decided to shorten the game to what we have now
 - At first we planned to make a **series of 3 minigames**: a running/jumping game, a dodging game, and a strategy
 - [x] running
 - [ ] dodging
