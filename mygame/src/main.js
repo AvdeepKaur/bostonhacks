@@ -100,6 +100,11 @@ scene("start", () => {
 
 go("start");
 
+//variables to show which cat versions are shown at the end
+var pInstrument = 0;
+var bInstrument = 0;
+var yInstrument = 0;
+
 scene("game", () => {
   // define gravity
   setGravity(2400);
@@ -139,12 +144,6 @@ scene("game", () => {
   //variables to help run the game
   var i = 3;
   var projectiles = 0;
-  var game1 = 0;
-
-  //variables to show which cat versions are shown at the end
-  var pInstrument = 0;
-  var bInstrument = 0;
-  var yInstrument = 0;
   //hearts
   const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
   const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
@@ -156,11 +155,13 @@ scene("game", () => {
   var obstacles = ["vase", "cat", "bookcase"];
   var instruments = ["cymbals", "drums", "guitar"];
   var iCollisions = 0;
+  var counter = 0;
 
   wait(2, () => {
     loop(2, () => {
       //checks if hearts are 0 and if there were less than 10 vases
       if (i != 0 && projectiles < 100 && iCollisions < 3) {
+        counter += 1;
         let r = Math.floor(Math.random() * 3);
         const projectile = add([
           sprite(obstacles[r]),
@@ -184,22 +185,18 @@ scene("game", () => {
           //adds the instrument image to the top
           instrument.onCollide("player", () => {
             iCollisions += 1;
+            console.log(iCollisions);
+            console.log(instruments);
             destroy(instrument);
             if (instruments[r] == "cymbals") {
-              pInstrument += 1;
+              pInstrument == 1;
               add([pos(184, 100), sprite("cymbals")]);
             } else if (instruments[r] == "drums") {
-              bInstrument += 1;
+              bInstrument == 1;
               add([pos(104, 100), sprite("drums")]);
             } else if (instruments[r] == "guitar") {
-              yInstrument += 1;
+              yInstrument == 1;
               add([pos(24, 100), sprite("guitar")]);
-            }
-            instruments.splice(r, 1);
-            if (iCollisions == 1) {
-              r = Math.floor(Math.random() * 2);
-            } else if (iCollisions == 2) {
-              r = Math.floor(Math.random() * 1);
             }
           });
         }

@@ -4,9 +4,9 @@
 > All code and graphics created by our team <3
 
 ## Description of current state of game
-A modern, mesmerizing, and meowtastic game. All of our musician cats, Robin, Sunny, and Tory, have lost their insturments! Help get them back before their debut performance! We are counting on you :3c
+A modern, mesmerizing, and meowtastic game. All of our musician cats, Robin, Sunny, and Tory, have lost their instruments! Help get them back before their debut performance! We are counting on you :3c
 
-INSERTCATSNAME will run around, avoiding obstucles, and finding their insturments. Don't worry if you loss a life when you collide into a vase, cat, or bookshelf (cats have 3 lives... wait...). If you miss an insturment, I hope you feel guilty, terrible in fact!!! (Just kidding, enjoy the game, enjoy the process, enjoy the ending)
+INSERTCATSNAME will run around, avoiding obstacles, and finding their instruments. Don't worry if you loss a life when you collide into a vase, cat, or bookshelf (cats have 3 lives... wait...). If you miss an instrument, I hope you feel guilty, terrible in fact!!! (Just kidding, enjoy the game, enjoy the process, enjoy the ending)
 
 Commands:
 
