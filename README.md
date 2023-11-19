@@ -29,3 +29,27 @@ Space: Jump
 - We wanted to make multiple endings depending on items gained from each minigame
 - As we began to work on our project, we realized that we had to learn more about javascript and html
 - We decided to shorten the game to what we have now
+- At first we planned to make a **series of 3 minigames**: a running/jumping game, a dodging game, and a strategy
+- [x] running
+- [ ] dodging
+- [ ] strategy
+- We wanted to make **multiple endings** depending on items gained from each minigame
+- As we began to work on our project, we realized that we had to learn more about javascript and html, as we all did not know much going into this project
+- We agreed to use Kaboom, a JavaScript library, to help us implement our game
+- We decided to **shorten the game** to what we have now
+
+## Challenges
+
+- As our team is new to web dev and game dev, we really struggled with getting started
+- We had many ideas but no idea how to go about them
+- We wanted...
+- [ ] Randomization for when insturments and obstucles appear
+- [x] Change in scenes
+- [x] Multiple sprites for cats depending on ending
+- [ ] Multiple mini-games
+- [x] Lives/Insturment bar
+- [x] Game over screen
+- Because we couldn't do randomization for when insturments and obstucles appear, we ended up hard coding it :c
+- We also really struggled with resizing our graphics
+- We also didn't know how to change scenes
+- We struggled with the time limit a lot, but we did learn a lot! Yippie! 🐱
