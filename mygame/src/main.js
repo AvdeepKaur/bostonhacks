@@ -100,11 +100,6 @@ scene("start", () => {
 
 go("start");
 
-//variables to show which cat versions are shown at the end
-var pInstrument = 0;
-var bInstrument = 0;
-var yInstrument = 0;
-
 scene("game", () => {
   // define gravity
   setGravity(2400);
@@ -144,6 +139,12 @@ scene("game", () => {
   //variables to help run the game
   var i = 3;
   var projectiles = 0;
+  var game1 = 0;
+
+  //variables to show which cat versions are shown at the end
+  var pInstrument = 0;
+  var bInstrument = 0;
+  var yInstrument = 0;
   //hearts
   const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
   const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
@@ -165,7 +166,7 @@ scene("game", () => {
         let r = Math.floor(Math.random() * 3);
         const projectile = add([
           sprite(obstacles[r]),
-          pos(width(), height() - 200),
+          pos(width(), height() - 150),
           area(),
           move(900, 1000),
           offscreen({ destroy: true }),
@@ -212,6 +213,7 @@ scene("game", () => {
           } else if (i == 1) {
             destroy(heart3);
             i -= 1;
+            go("end");
           }
         });
       } else {
@@ -240,12 +242,12 @@ scene("end", () => {
     add([sprite("bCat"), pos(450, 500)]);
   }
   if (bInstrument == 0) {
-    add([sprite("ni-bCat"), pos(250, 500)]);
+    add([sprite("ni-bCat"), pos(450, 500)]);
   }
   if (yInstrument == 1) {
     add([sprite("yCat"), pos(650, 500)]);
   }
   if (yInstrument == 0) {
-    add([sprite("ni-yCat"), pos(250, 500)]);
+    add([sprite("ni-yCat"), pos(650, 500)]);
   }
 });
