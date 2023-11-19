@@ -29,7 +29,12 @@ loadSprite("cat", "/sprites/cat2.png");
 loadSprite("black", "/sprites/Solid_black.png");
 
 var clicks = 0;
+  //variables to show which cat versions are shown at the end
+  var pInstrument = 0;
+  var bInstrument = 0;
+  var yInstrument = 0;
 
+  
 //starting scene
 scene("start", () => {
   add([sprite("stage"), pos(width() / 240, height() / 240)]);
@@ -140,11 +145,6 @@ scene("game", () => {
   var i = 3;
   var projectiles = 0;
   var game1 = 0;
-
-  //variables to show which cat versions are shown at the end
-  var pInstrument = 0;
-  var bInstrument = 0;
-  var yInstrument = 0;
   //hearts
   const heart1 = add([pos(184, 24), sprite("heart"), "heart1"]);
   const heart2 = add([pos(104, 24), sprite("heart"), "heart2"]);
@@ -161,7 +161,7 @@ scene("game", () => {
   wait(2, () => {
     loop(2, () => {
       //checks if hearts are 0 and if there were less than 10 vases
-      if (i != 0 && projectiles < 100 && iCollisions < 3) {
+      if (i != 0 && projectiles < 20 && iCollisions < 10) {
         counter += 1;
         let r = Math.floor(Math.random() * 3);
         const projectile = add([
@@ -173,7 +173,7 @@ scene("game", () => {
           "projectile",
         ]);
         projectiles += 1;
-        if (Math.floor(Math.random() * 5) == 3) {
+        if (Math.floor(Math.random() * 4) == 2) {
           const instrument = add([
             sprite(instruments[r]),
             pos(width(), height() - 350),
@@ -190,13 +190,13 @@ scene("game", () => {
             console.log(instruments);
             destroy(instrument);
             if (instruments[r] == "cymbals") {
-              pInstrument == 1;
+              pInstrument = 1;
               add([pos(184, 100), sprite("cymbals")]);
             } else if (instruments[r] == "drums") {
-              bInstrument == 1;
+              bInstrument = 1;
               add([pos(104, 100), sprite("drums")]);
             } else if (instruments[r] == "guitar") {
-              yInstrument == 1;
+              yInstrument = 1;
               add([pos(24, 100), sprite("guitar")]);
             }
           });
