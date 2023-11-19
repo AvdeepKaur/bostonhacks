@@ -2,7 +2,7 @@ import kaboom from "kaboom";
 
 // start the game
 kaboom({
-  background: [255, 255, 255],
+  background: [255, 253, 208],
   width: 1000,
   height: 500,
 });
