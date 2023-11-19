@@ -5,10 +5,11 @@ body {
     margin: 0;
     padding: 40px; /* Add padding for the entire body */
     box-sizing: border-box; /* Include padding in the total width/height calculation */
+    
 }
 
 /* Style for the header element */
-header {
+h1 {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -22,6 +23,7 @@ main {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .game {
