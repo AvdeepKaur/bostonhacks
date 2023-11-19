@@ -17,6 +17,10 @@ loadSprite("bCat", "/sprites/bluedrum_84x110.png");
 loadSprite("yCat", "/sprites/yellowguitar_84x110.png");
 loadSprite("ni-bCat", "/sprites/ni-blue_83x110.png");
 loadSprite("background","/backgroundMG1.png");
+loadSprite("drums", "/sprites/drums.png");
+loadSprite("cymbals", "/sprites/cymbols.png");
+loadSprite("guitar", "/sprites/guitar.png");
+
 // add character to screen, from a list of components
 
 const player = add([
