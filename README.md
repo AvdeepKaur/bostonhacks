@@ -10,6 +10,7 @@ Robin will run around, avoiding obstucles, and finding their insturments. Don't 
 
 **Commands:**
 Right-Click: Continue with the story
+
 Space: Jump
 
 ## Our Idea and Game Plan
