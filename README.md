@@ -6,7 +6,7 @@
 
 ![logo](https://github.com/AvdeepKaur/bostonhacks/assets/68460340/99700f1b-8304-4829-86c0-946ea1126852)
 
-> All code and graphics created by our team <3
+> All codes and graphics created by our team <3
 
 ## Description of current state of game
 
